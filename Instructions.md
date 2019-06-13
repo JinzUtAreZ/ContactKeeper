@@ -13,3 +13,17 @@
         b. concurrently === run front backend server simultaneously
 4. run server using nodemon for automatic refresh using package.json
     npm run server
+5. POSTMAN  when posting data
+    input middleware ===> app.use(express.json({ extended: false}));
+    in app select "Headers" = "Content-Type" = "application/json"
+    in body input json data ===> 
+        {
+            "name": "John Doe",
+            "email": "epal@gmail.com",
+            "password": "1234"
+        }
+6. jwt.io check data sent using encoded token
+
+latest link
+https://www.udemy.com/modern-react-front-to-back/learn/lecture/14969974#content
+
