@@ -10,8 +10,14 @@ const User = require('../models/User');
 //// Get user authentication
 //// server link   /api/auth
 //// access: Per User
-router.get('/', auth, (req, res) => {
-    res.send('Get Users Data');
+router.get('/', auth, async(req, res) => {
+    try{
+        const user = await User.findById(req.user.id).select('-password');
+        res.json(user);
+    } catch(err){
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
 })
 
 //// Post user authentication
@@ -45,7 +51,7 @@ router.post('/', [
             }
         }
 
-        jwt.sign(payload, config.get('jwtSecret'), { expiresIn: 3600 }
+        jwt.sign(payload, config.get('jwtSecret'), { expiresIn: 36000 }
         , (err, token) => {
             if(err) throw err;
             res.json({ token })

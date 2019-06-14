@@ -1,8 +1,10 @@
 Node instructions
 check versions node -v and npm -v
 
+Update -- npm install npm@latest -g
+
 React instructions:
-Installation
+Installation 
 
 1. npm install -g create-react-app
 2. create-react-app projectmanager //// npm config set registry="http://registry.npmjs.org" --->> to reset config
@@ -86,3 +88,9 @@ node server
 12. json-server --watch sample.json --port 3004
 13. npm i concurrently --save-dev
 14. concurrently --kill-others \"npm run start\" \"npm run json:server\" //// multiple server run together.
+
+#HTTP Requests
+1.  400 Bad Request error the request you sent to the website server, often something simple like a request to load a web page was somehow incorrect.
+2.  500 Internal Server Error is something has gone wrong on the web site's server.
+3.  404 means that the page you were trying to reach on a website couldn't be found on their server
+4. 401 Unauthorized error you were trying to access cannot be loaded until you first log in with a valid user ID and password.
