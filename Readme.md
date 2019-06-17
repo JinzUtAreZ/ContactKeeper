@@ -1,3 +1,5 @@
+Naming convention: https://github.com/airbnb/javascript/tree/master/react
+
 Node instructions
 check versions node -v and npm -v
 

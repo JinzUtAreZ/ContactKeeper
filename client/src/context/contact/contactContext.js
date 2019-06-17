@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
-import uuid from 'uuid';
-import ContactContext from './contactContext';
-import ContactReducer from './contactReducer';
+import { createContext } from 'react';
+const contactContext = createContext();
+export default contactContext;
+
