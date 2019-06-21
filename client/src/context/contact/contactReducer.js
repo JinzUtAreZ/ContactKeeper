@@ -14,7 +14,11 @@ import {
 export default (state, action) => {
   switch (action.type) {
     case GET_CONTACTS:
-      return { ...state, contacts: action.payload, loading: false };
+      return {
+        ...state,
+        contacts: action.payload,
+        loading: false
+      };
     case ADD_CONTACT:
       return {
         ...state,
@@ -46,9 +50,15 @@ export default (state, action) => {
         current: null
       };
     case SET_CURRENT:
-      return { ...state, current: action.payload };
+      return {
+        ...state,
+        current: action.payload
+      };
     case CLEAR_CURRENT:
-      return { ...state, current: null };
+      return {
+        ...state,
+        current: null
+      };
     case FILTER_CONTACTS:
       return {
         ...state,
@@ -63,7 +73,10 @@ export default (state, action) => {
         filtered: null
       };
     case CONTACT_ERROR:
-      return { ...state, error: action.payload };
+      return {
+        ...state,
+        error: action.payload
+      };
     default:
       return state;
   }

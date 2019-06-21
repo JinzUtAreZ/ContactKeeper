@@ -1,16 +1,17 @@
 import React, { Fragment, useContext, useEffect } from 'react';
-import ContactContext from '../../context/contact/contactContext';
-import ContactItem from './ContactItem';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import ContactItem from './ContactItem';
 import Spinner from '../layout/Spinner';
+import ContactContext from '../../context/contact/contactContext';
 
 const Contacts = () => {
   const contactContext = useContext(ContactContext);
+
   const { contacts, filtered, getContacts, loading } = contactContext;
 
   useEffect(() => {
-    getContacts(); /// may error dito sa login na may laman at wala
-    //eslint-disable-next-line
+    getContacts();
+    // eslint-disable-next-line
   }, []);
 
   if (contacts !== null && contacts.length === 0 && !loading) {
@@ -26,9 +27,8 @@ const Contacts = () => {
                 <CSSTransition
                   key={contact._id}
                   timeout={500}
-                  classNames="item"
+                  classNames='item'
                 >
-                  {/* <ContactItem key={contact.id} contact={contact} /> without CSS*/}
                   <ContactItem contact={contact} />
                 </CSSTransition>
               ))
@@ -36,7 +36,7 @@ const Contacts = () => {
                 <CSSTransition
                   key={contact._id}
                   timeout={500}
-                  classNames="item"
+                  classNames='item'
                 >
                   <ContactItem contact={contact} />
                 </CSSTransition>
