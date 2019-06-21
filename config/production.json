@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://mat:mat123@reactprojectlearning-texug.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
+}

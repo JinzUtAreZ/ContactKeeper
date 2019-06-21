@@ -6,7 +6,7 @@ check versions node -v and npm -v
 Update -- npm install npm@latest -g
 
 React instructions:
-Installation 
+Installation
 
 1. npm install -g create-react-app
 2. create-react-app projectmanager //// npm config set registry="http://registry.npmjs.org" --->> to reset config
@@ -92,7 +92,25 @@ node server
 14. concurrently --kill-others \"npm run start\" \"npm run json:server\" //// multiple server run together.
 
 #HTTP Requests
+
 1.  400 Bad Request error the request you sent to the website server, often something simple like a request to load a web page was somehow incorrect.
 2.  500 Internal Server Error is something has gone wrong on the web site's server.
 3.  404 means that the page you were trying to reach on a website couldn't be found on their server
-4. 401 Unauthorized error you were trying to access cannot be loaded until you first log in with a valid user ID and password.
+4.  401 Unauthorized error you were trying to access cannot be loaded until you first log in with a valid user ID and password.
+
+# HEROKU DEPLOY APPS
+
+1. go to client === a. cd client b. npm run build
+2. In server.js put code below make sure it is under the routes section:
+   if (process.env.NODE_ENV === 'production') {
+   app.use(express.static('/client/build'));
+   app.get('\*', (req, res) =>
+   res.sendFile(path.resolve(\_\_dirname, 'client', 'build', 'index.html'))
+   );
+   }
+3. in config folder create a production.json file input code in default.json
+4. npm run build OR
+   run in post build server
+   a. "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+5. POST BUILD: go to cmd then input heroku login, press browser LOGIN to login
+6. heroku create
