@@ -113,4 +113,6 @@ node server
    run in post build server
    a. "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 5. POST BUILD: go to cmd then input heroku login, press browser LOGIN to login
-6. heroku create
+6. heroku create, go to created link, then deploy tab, initialize: git init,
+   copy \ \$ heroku git:remote with link created, git push heroku master
+7. heroku open
